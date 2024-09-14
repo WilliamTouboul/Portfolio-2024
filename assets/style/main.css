@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'Mono-reg';
+    src: url(../fonts/PPRightGroteskMono-Regular.otf);
+}
+
+@font-face {
+    font-family: 'Mono-bold';
+    src: url(../fonts/PPRightGroteskMono-Bold.otf);
+}
+
+@font-face {
+    font-family: 'Mono-light';
+    src: url(../fonts/PPRightGroteskMono-Fine.otf);
+}
+
+@font-face {
+    font-family: "Talisman";
+    src: url(../fonts/Tests/PPTalisman-Compact-Regular.otf);
+}
+
+:root {
+    --bg_white: #191919;
+    --black: rgb(240, 240, 255);
+    --highlight: #18ABCC;
+
+    --size_h1: 64px;
+    --size_h2: 48px;
+    --size_h3: 32px;
+    --size_h4: 24px;
+    --size_p: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #191919;
+    overflow-x: hidden;
+}
+
+canvas {
+    display: block;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li {
+    font-family: 'Mono-reg', sans-serif;
+    color: var(--black);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    Utils                                   */
+/* -------------------------------------------------------------------------- */
+.main-container {
+    padding-top: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+@media (max-width : 768px) {
+    .main-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-container h1 {
+        font-size: 5rem;
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.sb {
+    justify-content: space-between;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    LENIS                                   */
+/* -------------------------------------------------------------------------- */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
+
+/* ---------------------------------- Main ---------------------------------- */
+nav {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main-container {
+    padding-top: 10rem;
+}
+
+nav p {
+    font-size: 2rem;
+
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: normal;
+}
+
+.title-container h1 {
+    font-family: "Talisman" !important;
+    font-weight: normal;
+    line-height: 1;
+}

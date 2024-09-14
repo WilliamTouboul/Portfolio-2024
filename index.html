@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>William Touboul</title>
+      <link rel="stylesheet" href="assets/style/main.css" />
+   </head>
+   <body>
+      <div class="cursor"></div>
+      <nav class="row sb">
+         <div>
+            <p>William Touboul</p>
+         </div>
+         <div>
+            <p class="bold">Menu</p>
+         </div>
+      </nav>
+
+      <div class="main-container">
+         <div class="title-container">
+            <h1 class="col">
+               <span class="title-span-one">FAITE</span>
+               <span class="title-span-two">EXPLOSER</span>
+               <span class="title-span-three">VOTRE MARQUE</span>
+            </h1>
+         </div>
+      </div>
+
+      <div class="spacer" style="min-height: 100vh"></div>
+
+      <!-- Three JS-->
+      <script src="assets/scripts/THREE.js"></script>
+      <!-- Lenis -->
+      <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+      <!-- GSAP -->
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+      <!-- Lenis Init + GSAP -->
+      <script>
+         const lenis = new Lenis();
+
+         lenis.on("scroll", (e) => {
+            console.log(e);
+         });
+
+         lenis.on("scroll", ScrollTrigger.update);
+
+         gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+         });
+
+         gsap.ticker.lagSmoothing(0);
+      </script>
+      <!-- Maison -->
+      <script src="assets/scripts/main.js"></script>
+      <script src="assets/scripts/3.js"></script>
+
+      <script>
+         gsap.registerPlugin(ScrollTrigger);
+         const firstSpan = document.querySelector(".title-span-one");
+         const secondSpan = document.querySelector(".title-span-two");
+         const thirdSpan = document.querySelector(".title-span-three");
+
+         gsap.to(firstSpan, {
+            scrollTrigger: {
+               trigger: ".title-container",
+               start: "top 50%",
+               end: "bottom top",
+               scrub: 1,
+            },
+            x: -80,
+         });
+
+         gsap.to(secondSpan, {
+            scrollTrigger: {
+               trigger: ".title-container",
+               start: "top 50%",
+               end: "bottom top",
+               scrub: 1,
+            },
+            x:80,
+         });
+
+         gsap.to(thirdSpan, {
+            scrollTrigger: {
+               trigger: ".title-container",
+               start: "top 50%",
+               end: "bottom top",
+               scrub: 1,
+            },
+            x: -80,
+         });
+      </script>
+   </body>
+</html>
